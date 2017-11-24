@@ -1,5 +1,15 @@
+#menu {
+	position: fixed;
+	height: auto;
+	color: #FFcF00;
+}
 #main {
 	padding-left: 10%;
 	padding-right: 10%;
 	padding-bottom: 20px;
+}
+#footer {
+	position: fixed;
+	height: auto;
+	color: #FFcF00;
 }
