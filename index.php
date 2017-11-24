@@ -24,7 +24,7 @@
 				</li>
 			</ul>
 			<div id="main" >
-				<?php
+				<!--<?php
 				$servername = "localhost";
 				$username = "username";
 				$password = "password";
@@ -49,7 +49,7 @@
 					echo "0 results";
 				}
 				$conn->close();
-				?>
+				?>-->
 				contentcontentcontentcontentcontent<br>
 				contentcontentcontentcontentcontent<br>
 				contentcontentcontentcontentcontent<br>
