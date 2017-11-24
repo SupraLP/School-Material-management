@@ -1,7 +1,16 @@
 ul#menu {
+	background-color: #ff00ff;
+	margin: 0px;
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	right: 0px;
+	height: auto;
+	color: #FF9F00;
 }
 
 li#menu {
+	float: left;
 }
 
 li a#menu, .dropbtn {
