@@ -1,4 +1,8 @@
 ul#menu {
+	grid-column-start:1; 
+	grid-column-end:4; 
+	grid-row-start:1; 
+	grid-row-end:2; 
     list-style-type: none;
 	background-color: #777777;
 	margin: 0px;

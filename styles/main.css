@@ -1,7 +1,7 @@
 .container { 
 	display: grid;
 	grid-template-rows:auto 1fr auto; 
-	grid-template-columns:25% 25% 25% 25%; 
+	grid-template-columns:20% 60% 20%; 
 }
 #main {
 	background-color: #aaaaaa;
