@@ -1,5 +1,6 @@
 ul#menu {
-	background-color: #ff00ff;
+    list-style-type: none;
+	background-color: #777777;
 	margin: 0px;
 	position: fixed;
 	top: 0px;
@@ -11,6 +12,7 @@ ul#menu {
 
 li#menu {
 	float: left;
+	padding: 20px;
 }
 
 li a#menu, .dropbtn {
