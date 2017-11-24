@@ -1,15 +1,18 @@
 #menu {
 	position: fixed;
 	height: auto;
-	color: #FFcF00;
+	width: 100%;
+	color: #FF9F00;
 }
 #main {
-	padding-left: 10%;
-	padding-right: 10%;
-	padding-bottom: 20px;
+	margin-left: 10%;
+	margin-right: 10%;
+	margin-bottom: 20px;
 }
 #footer {
 	position: fixed;
 	height: auto;
-	color: #FFcF00;
+	width: 100%;
+	bottom: 0px;
+	color: #FF9F00;
 }
