@@ -21,3 +21,38 @@
 	right: 0px;
 	color: #FF9F00;
 }
+.textbox {
+    color: black;
+    padding:6px;
+    margin:6px;
+    border:none;
+    min-width:600px;
+}
+.coloredtextbox {
+	background-color: #f9f9f9;
+    color: black;
+    padding:14px;
+    margin:6px;
+    border:none;
+    min-width:100px;
+}
+#darkGray {
+	background-color: #DDDDDD;
+}
+h1.text {
+	font-size:30px;
+    color: #f07b00;
+    padding:6px;
+    margin:6px;
+    border:none;
+    min-width:600px;
+}
+h1.ueberschrift {
+	font-size:40px;
+    color: #f07b00;
+    padding:6px;
+    margin:6px;
+    border:none;
+    min-width:600px;
+    text-align: center;
+}

@@ -22,8 +22,6 @@ SET time_zone = "+00:00";
 -- Datenbank: `main`
 --
 
--- --------------------------------------------------------
-
 --
 -- Tabellenstruktur für Tabelle `aufgaben`
 --
@@ -34,8 +32,6 @@ CREATE TABLE `aufgaben` (
   `theme` text NOT NULL,
   `description` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
 
 --
 -- Tabellenstruktur für Tabelle `benutzer`
@@ -49,8 +45,6 @@ CREATE TABLE `benutzer` (
   `secondName` text NOT NULL,
   `eMail` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
 
 --
 -- Tabellenstruktur für Tabelle `material`
