@@ -24,7 +24,37 @@
 				</li>
 			</ul>
 			<div id="main" >
+<<<<<<< HEAD
 				contentcontentcontentcontentcontent<br>
+=======
+				<!--<?php
+				$servername = "localhost";
+				$username = "username";
+				$password = "password";
+				$dbname = "main";
+
+				// Create connection
+				$conn = new mysqli($servername, $username, $password, $dbname);
+				// Check connection
+				if ($conn->connect_error) {
+					die("Connection failed: " . $conn->connect_error);
+				}
+				
+				$sql = "SELECT id, firstname, lastname FROM MyGuests";
+				$result = $conn->query($sql);
+				
+				if ($result->num_rows > 0) {
+					// output data of each row
+					while($row = $result->fetch_assoc()) {
+						echo "id: " . $row["id"]. " - Name: " . $row["firstname"]. " " . $row["lastname"]. "<br>";
+					}
+				} else {
+					echo "0 results";
+				}
+				$conn->close();
+				?>-->
+				testcontentcontentcontentcontentcontent<br>
+>>>>>>> d475a4c3330be41047a2c0276b818eb62ecc199d
 				contentcontentcontentcontentcontent<br>
 				contentcontentcontentcontentcontent<br>
 				contentcontentcontentcontentcontent<br>
