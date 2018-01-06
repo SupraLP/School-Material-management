@@ -12,7 +12,7 @@
 	<body>
 		<div class="main" >
 			<center>
-				<h1 class="ueberschrift">
+				<h1 class="title">
 					Registriegen<br>
 				</h1>
 				<form action="register.php" style="margin:5px;" method="post" name="form1" >
@@ -22,7 +22,7 @@
 				</form>
 			</center>
 			<?php 
-			error_reporting(E_ALL & ~E_NOTICE);
+			error_reporting(E_ALL & ~E_NOTICE); //notices disabled, disable this line for debugging
 			$username = $_POST["name"];
 			$password = hash('sha256', $_POST["password"] . "gztadffesfffsacdfdvdsvfdgds");
 			$servername = "localhost";
@@ -41,35 +41,3 @@
 		</div>
 	</body>
 </html>
-
-
-<!-- 
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "main";
-
-// Create connection
-$database = new mysqli($servername, $username, $password);
-// Check connection
-/*if ($database->connect_error) {
-	echo "Connection failed: " . $database->connect_error;
-}*/
-
-$database->query("CREATE DATABASE test2");
-$database->query("USE test2");
-if $database->query("CREATE TABLE benutzer (username TEXT, password TEXT)"); {
-	echo "hi";
-}
-
-/*if ($result->num_rows > 0) {
-	// output data of each row
-	while($row = $result->fetch_assoc()) {
-		echo "id: " . $row["id"]. " - Name: " . $row["firstname"]. " " . $row["lastname"]. "<br>";
-	}
-} else {
-	echo "0 results";
-}*/
-
-$conn->close();
--->

@@ -24,40 +24,13 @@
 				</li>
 			</ul>
 			<div id="main" >
-				<h1 class="ueberschrift">
-					Login<br>
-				</h1>
-				<form action="index.php" style="margin:5px;" method="post" name="form1" >
-					<input id="name" type="text" name="name" placeholder="Name" value="" ></input><br>
-					<input id="password" type="password" name="password" placeholder="Passwort" value="" ></input><br>
-					<input id="submit" type="submit" name="submit" placeholder="Login" value="Login" ></input>
-				</form>
-				<?php
-				$username = $_POST["name"];
-				$password = hash('sha256', $_POST["password"] . "gztadffesfffsacdfdvdsvfdgds");
-				$servername = "localhost";
-				$DBusername = "root";
-				$DBpassword = "";
-				$DBname = "main";
-
-				// Create connection
-				$database = new mysqli($servername, $DBusername, $DBpassword);
-				
-				$database->query("USE test2");
-				/*if ($username==FrauBorda and $passwort==hash('sha256', "EasterEgg" . "gztadffesfffsacdfdvdsvfdgds")) {
-					echo header("Location: pfannkuchen.html");
-					$log = 1;
-				} else {*/
-					$result = $database->query("SELECT password FROM benutzer WHERE username = '" . $username . "'");
-					$pass = $result->fetch_array();
-					if (hash('sha256', $password . "gztadffesfffsacdfdvdsvfdgds") == $pass[0]) {
-						echo "Login Erfolgreich";
-					} else {
-						echo "Passwort und Benutzername stimmen nicht überein";
-					}/*
-				}*/
-				$database->close();
-				?>
+				<center>
+					<h1>
+						title-placeholder
+					</h1>
+				</center>
+				<input type="button" value="Registrieren" /><br/>
+				<input type="button" value="Anmelden" />
 			</div>
 			<div id="footer" >
 				footerfooterfooterfooterfooterfooterfooterfooterfooterfooterfooter<br>
