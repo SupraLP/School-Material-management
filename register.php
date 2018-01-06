@@ -32,7 +32,7 @@
 
 			$database = new mysqli($servername, $DBusername, $DBpassword);
 			
-			//$database->query("CREATE DATABASE test2");
+			$database->query("CREATE DATABASE IF NOT EXISTS test2");
 			$database->query("USE test2");
 			$database->query("CREATE TABLE IF NOT EXISTS benutzer (`id` int, `username` TEXT, `password` TEXT, PRIMARY KEY (id))");
 			$database->query("INSERT INTO benutzer (DEFAULT, `username`, `password`) VALUES ('"DEFAULT"','". $username ."','". $password ."')");

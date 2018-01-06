@@ -1,5 +1,6 @@
 .container { 
 	display: grid;
+	font-family: sans-serif;
 	grid-template-rows:60px 1fr 60px; 
 	grid-template-columns:20% 60% 20%; 
 }
@@ -55,4 +56,16 @@ h1.title {
     border:none;
     min-width:600px;
     text-align: center;
+}
+.button {
+	background-color: #FF9F00;
+	height: auto;
+	width: 100px;
+	margin: 5px;
+	padding: 5px;
+	text-decoration: none;
+}
+div.button a {
+	color: #FFFFFF;
+	text-decoration: none;
 }

@@ -27,8 +27,8 @@
 				<h1 class="title">
 					title placeholder<br>
 				</h1>
-				<form action="register.php" ><input type="button" value="Registrieren" /></form><br/>
-				<form action="login.php" ><input type="button" value="Anmelden" /></form>
+				<div class="button" ><a href="register.php" >Registrieren</a></div><br/>
+				<div class="button" ><a href="login.php" >Anmelden</a></div>
 			</div>
 			<div id="footer" >
 				footerfooterfooterfooterfooterfooterfooterfooterfooterfooterfooter<br>
