@@ -24,13 +24,11 @@
 				</li>
 			</ul>
 			<div id="main" >
-				<center>
-					<h1>
-						title-placeholder
-					</h1>
-				</center>
-				<input type="button" value="Registrieren" /><br/>
-				<input type="button" value="Anmelden" />
+				<h1 class="title">
+					title placeholder<br>
+				</h1>
+				<form action="register.php" ><input type="button" value="Registrieren" /></form><br/>
+				<form action="login.php" ><input type="button" value="Anmelden" /></form>
 			</div>
 			<div id="footer" >
 				footerfooterfooterfooterfooterfooterfooterfooterfooterfooterfooter<br>
