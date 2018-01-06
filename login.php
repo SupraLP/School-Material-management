@@ -50,7 +50,7 @@
 				} else {*/
 					$result = $database->query("SELECT password FROM benutzer WHERE username = '" . $username . "'");
 					$pass = $result->fetch_array();
-					if (hash('sha256', $password . "gztadffesfffsacdfdvdsvfdgds") == $pass[0]) {
+					if ($password == $pass[0]) {
 						echo "Login Erfolgreich";
 					} else {
 						echo "Passwort und Benutzername stimmen nicht überein";
