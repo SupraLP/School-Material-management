@@ -51,14 +51,16 @@
 					$result = $database->query("SELECT password FROM benutzer WHERE username = '" . $username . "'");
 					$pass = $result->fetch_array();
 					
-					if($result === FALSE) { 
-						die(mysql_error());
-					}
+					$resultType = gettype ( $result );
 					
-					if ($password == $pass[0]) {
-						echo "Login Erfolgreich";
+					if($resultType !== "string") { 
+						echo "mysql_error (no input)";
 					} else {
-						echo "Passwort und Benutzername stimmen nicht überein";
+						if ($password == $pass[0]) {
+							echo "Login Erfolgreich";
+						} else {
+							echo "Passwort und Benutzername stimmen nicht überein";
+						}
 					}/*
 				}*/
 				$database->close();
