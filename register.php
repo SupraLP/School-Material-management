@@ -15,13 +15,14 @@
 				<h1 class="ueberschrift">
 					Registriegen<br>
 				</h1>
-				<form action="/Informatik_K10/register.php" style="margin:5px;" method="post" name="form1" >
+				<form action="register.php" style="margin:5px;" method="post" name="form1" >
 					<input id="name" type="text" name="name" placeholder="Name" value="" ></input><br>
 					<input id="password" type="password" name="password" placeholder="Passwort" value="" ></input><br>
 					<input id="submit" type="submit" name="submit" placeholder="Login" value="Login" ></input>
 				</form>
 			</center>
 			<?php 
+			error_reporting(E_ALL & ~E_NOTICE);
 			$username = $_POST["name"];
 			$password = hash('sha256', $_POST["password"] . "gztadffesfffsacdfdvdsvfdgds");
 			$servername = "localhost";
@@ -33,9 +34,8 @@
 			
 			//$database->query("CREATE DATABASE test2");
 			$database->query("USE test2");
-			if ($database->query("CREATE TABLE material (username TEXT, password TEXT)") VALUES (". $name .",". $password .") {
-				echo header("Location: index.html");
-			}
+			$database->query("CREATE TABLE IF NOT EXISTS benutzer (`id` int, `username` TEXT, `password` TEXT, PRIMARY KEY (id))");
+			$database->query("INSERT INTO benutzer (DEFAULT, `username`, `password`) VALUES ('"DEFAULT"','". $username ."','". $password ."')");
 			$database->close(); 
 			?>
 		</div>

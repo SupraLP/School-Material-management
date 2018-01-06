@@ -24,41 +24,40 @@
 				</li>
 			</ul>
 			<div id="main" >
-<<<<<<< HEAD
-				contentcontentcontentcontentcontent<br>
-=======
-				<!--<?php
+				<h1 class="ueberschrift">
+					Login<br>
+				</h1>
+				<form action="index.php" style="margin:5px;" method="post" name="form1" >
+					<input id="name" type="text" name="name" placeholder="Name" value="" ></input><br>
+					<input id="password" type="password" name="password" placeholder="Passwort" value="" ></input><br>
+					<input id="submit" type="submit" name="submit" placeholder="Login" value="Login" ></input>
+				</form>
+				<?php
+				$username = $_POST["name"];
+				$password = hash('sha256', $_POST["password"] . "gztadffesfffsacdfdvdsvfdgds");
 				$servername = "localhost";
-				$username = "username";
-				$password = "password";
-				$dbname = "main";
+				$DBusername = "root";
+				$DBpassword = "";
+				$DBname = "main";
 
 				// Create connection
-				$conn = new mysqli($servername, $username, $password, $dbname);
-				// Check connection
-				if ($conn->connect_error) {
-					die("Connection failed: " . $conn->connect_error);
-				}
+				$database = new mysqli($servername, $DBusername, $DBpassword);
 				
-				$sql = "SELECT id, firstname, lastname FROM MyGuests";
-				$result = $conn->query($sql);
-				
-				if ($result->num_rows > 0) {
-					// output data of each row
-					while($row = $result->fetch_assoc()) {
-						echo "id: " . $row["id"]. " - Name: " . $row["firstname"]. " " . $row["lastname"]. "<br>";
-					}
-				} else {
-					echo "0 results";
-				}
-				$conn->close();
-				?>-->
-				testcontentcontentcontentcontentcontent<br>
->>>>>>> d475a4c3330be41047a2c0276b818eb62ecc199d
-				contentcontentcontentcontentcontent<br>
-				contentcontentcontentcontentcontent<br>
-				contentcontentcontentcontentcontent<br>
-				contentcontentcontentcontentcontent<br>
+				$database->query("USE test2");
+				/*if ($username==FrauBorda and $passwort==hash('sha256', "EasterEgg" . "gztadffesfffsacdfdvdsvfdgds")) {
+					echo header("Location: pfannkuchen.html");
+					$log = 1;
+				} else {*/
+					$result = $database->query("SELECT password FROM benutzer WHERE username = '" . $username . "'");
+					$pass = $result->fetch_array();
+					if (hash('sha256', $password . "gztadffesfffsacdfdvdsvfdgds") == $pass[0]) {
+						echo "Login Erfolgreich";
+					} else {
+						echo "Passwort und Benutzername stimmen nicht überein";
+					}/*
+				}*/
+				$database->close();
+				?>
 			</div>
 			<div id="footer" >
 				footerfooterfooterfooterfooterfooterfooterfooterfooterfooterfooter<br>
