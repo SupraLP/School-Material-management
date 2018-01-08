@@ -27,7 +27,7 @@
 				<h1 class="title">
 					Login<br>
 				</h1>
-				<form action="index.php" style="margin:5px;" method="post" name="form1" >
+				<form action="login.php" style="margin:5px;" method="post" name="form1" >
 					<input id="name" type="text" name="name" placeholder="Name" value="" ></input><br>
 					<input id="password" type="password" name="password" placeholder="Passwort" value="" ></input><br>
 					<input id="submit" type="submit" name="submit" placeholder="Login" value="Login" ></input>
