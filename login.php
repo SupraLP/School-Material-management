@@ -13,13 +13,18 @@
 		<div class="container" >
 			<ul id="menu" >
 				<li id="menu" >
-					<a id="menu" >
-						menupoint1
+					<a id="menu" href="index.php" >
+						home
 					</a>
 				</li>
 				<li id="menu" >
-					<a id="menu" >
-						menupoint2
+					<a id="menu" href="register.php" >
+						register
+					</a>
+				</li>
+				<li id="menu" >
+					<a id="menu" href="login.php" >
+						login
 					</a>
 				</li>
 			</ul>
@@ -33,6 +38,13 @@
 					<input id="submit" type="submit" name="submit" placeholder="Login" value="Login" ></input>
 				</form>
 				<?php
+				error_reporting(E_ALL & ~E_NOTICE); //notices disabled, disable this line for debugging
+				/*if (isset($_POST["name"])) {
+					die
+				}
+				if (isset(hash('sha256', $_POST["password"] . "gztadffesfffsacdfdvdsvfdgds"))) {
+					die
+				}*/
 				$username = $_POST["name"];
 				$password = hash('sha256', $_POST["password"] . "gztadffesfffsacdfdvdsvfdgds");
 				$servername = "localhost";
@@ -42,27 +54,23 @@
 
 				// Create connection
 				$database = new mysqli($servername, $DBusername, $DBpassword);
-				
 				$database->query("USE test2");
-				/*if ($username==FrauBorda and $passwort==hash('sha256', "EasterEgg" . "gztadffesfffsacdfdvdsvfdgds")) {
+				if ($username=="FrauBorda" and $password==hash('sha256', "EasterEgg" . "gztadffesfffsacdfdvdsvfdgds")) {
 					echo header("Location: pfannkuchen.html");
 					$log = 1;
-				} else {*/
-					$result = $database->query("SELECT password FROM benutzer WHERE username = '" . $username . "'");
+				} else {
+					$result = $database->query("SELECT password FROM user WHERE username = '" . $username . "'");
 					$pass = $result->fetch_array();
-					
-					$resultType = gettype ( $result );
-					
-					if($resultType !== "string") { 
-						echo "mysql_error (no input)";
+					if ($password == $pass[0]) {
+						session_start();
+						$_SESSION['name'] = 7;
+						echo $_SESSION['name'];
+						
+						
 					} else {
-						if ($password == $pass[0]) {
-							echo "Login Erfolgreich";
-						} else {
-							echo "Passwort und Benutzername stimmen nicht überein";
-						}
-					}/*
-				}*/
+						echo "Passwort und Benutzername stimmen nicht überein";
+					}
+				}
 				$database->close();
 				?>
 			</div>

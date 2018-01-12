@@ -1,28 +1,50 @@
 <!DOCTYPE html>
+<meta charset="utf-8" lang="de" >
 <html>
+	<link rel="shortcut icon" href="index.ico"/>
+	<link rel="stylesheet" href="styles/main.css">
+	<link rel="stylesheet" href="styles/menu.css">
 	<head>
-		<link rel="shortcut icon" href="style/index.ico"/>
-        <link rel="stylesheet" href="style/links.css">
-		<link rel="stylesheet" href="style/menu.css">
-        <link rel="stylesheet" href="style/footer.css">
-        <link rel="stylesheet" href="style/boxes.css">
-        <link rel="stylesheet" href="style/background.css">
-		<title>Registrieren</title>
+		<title>
+			MAIN page
+		</title>
 	</head>
 	<body>
-		<div class="main" >
-			<center>
+		<div class="container" >
+			<ul id="menu" >
+				<li id="menu" >
+					<a id="menu" href="index.php" >
+						home
+					</a>
+				</li>
+				<li id="menu" >
+					<a id="menu" href="register.php" >
+						register
+					</a>
+				</li>
+				<li id="menu" >
+					<a id="menu" href="login.php" >
+						login
+					</a>
+				</li>
+			</ul>
+			<div id="main" >
 				<h1 class="title">
 					Registriegen<br>
 				</h1>
 				<form action="register.php" style="margin:5px;" method="post" name="form1" >
 					<input id="name" type="text" name="name" placeholder="Name" value="" ></input><br>
 					<input id="password" type="password" name="password" placeholder="Passwort" value="" ></input><br>
-					<input id="submit" type="submit" name="submit" placeholder="Login" value="Login" ></input>
+					<input id="submit" type="submit" name="submit" placeholder="Login" value="Registrieren" ></input>
 				</form>
 			</center>
-			<?php 
+			<?php
 			error_reporting(E_ALL & ~E_NOTICE); //notices disabled, disable this line for debugging
+			/*if (isset($_POST["name"])) {
+				die();
+			} elseif (isset($_POST["password"])) {
+				die();
+			} else {*/
 			$username = $_POST["name"];
 			$password = hash('sha256', $_POST["password"] . "gztadffesfffsacdfdvdsvfdgds");
 			$servername = "localhost";
@@ -34,9 +56,9 @@
 			
 			$database->query("CREATE DATABASE IF NOT EXISTS test2");
 			$database->query("USE test2");
-			$database->query("CREATE TABLE IF NOT EXISTS benutzer (`id` int, `username` TEXT, `password` TEXT, PRIMARY KEY (id))");
-			$database->query("INSERT INTO benutzer (DEFAULT, `username`, `password`) VALUES ('"DEFAULT"','". $username ."','". $password ."')");
-			$database->close(); 
+			$database->query("CREATE TABLE IF NOT EXISTS user (`username` TEXT, `password` TEXT)");
+			$database->query("INSERT INTO user (`username`, `password`) VALUES ('". $username ."','". $password ."')");
+			$database->close();
 			?>
 		</div>
 	</body>
